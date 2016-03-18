@@ -1,0 +1,361 @@
+x=c(1:3)
+y=c(1:15)
+x=c(85:100)
+plot(x,y)
+length(x)
+length(y)
+x=c(86:100)
+plot(x,y)
+q()
+install.packages(gdata)
+install.packages("gdata")
+library(gdata)
+getwd()
+my.data =read.xls("/media/pragati/New Volume/data_files/eBayAuctions.xls", header=TRUE)
+head(my.data)
+my.data =read.xls("/media/pragati/New Volume/data_files/eBayAuctions.xls", sheet=1, header=TRUE)
+head(my.data)
+library(MASS)
+?dnorm
+source('/media/pragati/New Volume/Pragati/BI/HW.Topic-2.Part-1.LogisticRegression/HW.r')
+print(summary(fit.all))
+set.seed(1)
+trainindices=sample(nrow(my.data.dummy), size=nrow(my.data.dummy)*0.6)
+train=my.data.dummy[trainindices,]
+validation=my.data.dummy[-trainindices,]
+fit.all=glm(Competitive.~., family=binomial(link="logit"), data=train)
+print(summary(fit.all))
+head(my.data.dummy)
+print(pivotDur)
+?rnorm
+ncol(my.data.dummy)
+summary(fit.all)
+my.data[my.data$Category=="Music/Movie/Game"]
+my.data[my.data$Category=="Music/Movie/Game",]
+pointsprior=rnorm(10000, mean=4, sd=0.8)
+summary(fit.single)
+plot(dnorm(pointsprior,mean=4, sd=0.8))
+names(train)
+train[train$endDay_Tue==1,]
+my.data[21,]
+my.data.dummy[21,]
+plot(seq(min(pointprior),max(pointsprior), length.out=length(pointsprior)), dnorm(seq(min(pointsprior), max(pointsprior), length.out=length(pointsprior)), mean=4, sd=0.8))
+plot(seq(min(pointsprior),max(pointsprior), length.out=length(pointsprior)), dnorm(seq(min(pointsprior), max(pointsprior), length.out=length(pointsprior)), mean=4, sd=0.8))
+plot(seq(min(pointsprior),max(pointsprior), length.out=length(pointsprior)), dnorm(seq(min(pointsprior), max(pointsprior), length.out=length(pointsprior)), mean=4, sd=0.8), lty=1)
+plot(seq(min(pointsprior),max(pointsprior), length.out=length(pointsprior)), dnorm(seq(min(pointsprior), max(pointsprior), length.out=length(pointsprior)), mean=4, sd=0.8))
+?plot
+plot(seq(min(pointsprior),max(pointsprior), length.out=length(pointsprior)), dnorm(seq(min(pointsprior), max(pointsprior), length.out=length(pointsprior)), mean=4, sd=0.8), type="l")
+plot(seq(min(pointsprior),max(pointsprior), length.out=length(pointsprior)), dnorm(seq(min(pointsprior), max(pointsprior), length.out=length(pointsprior)), mean=4, sd=0.8), type="l", col='red')
+plot(seq(min(pointsprior),max(pointsprior), length.out=length(pointsprior)), dnorm(seq(min(pointsprior), max(pointsprior), length.out=length(pointsprior)), mean=4, sd=0.8), type="l", col='red', xlab="points", ylab="Probability")
+plot(seq(min(pointsprior),max(pointsprior), length.out=length(pointsprior)), dnorm(seq(min(pointsprior), max(pointsprior), length.out=length(pointsprior)), mean=4, sd=0.8), type="l", col='red', xlab="points", ylab="Probability", main="Graph")
+dummyCat
+dummyCat[833,]
+dummyCat[823,]
+dummyCat[1,]
+dummydur[833,]
+dummydur[823,]
+dummydur[800,]
+my.data[833,]
+my.data[1,]
+dummydur[1,]
+pointsprior=rnorm(10000, mean=4, sd=0.8)
+pointsx=rnorm(10000, mean=6, sd=1.5)
+points(seq(min(pointsx),max(pointsx), length.out=length(pointsx)), dnorm(seq(min(pointsx), max(pointsx), length.out=length(pointsx)), mean=6, sd=1.5), type="l", col='green')
+summary(fit.all)
+plot(seq(min(pointsx),max(pointsx), length.out=length(pointsx)), dnorm(seq(min(pointsx), max(pointsx), length.out=length(pointsx)), mean=6, sd=1.5), type="l", col='green',xlab="points", ylab="Probability", main="Graph" )
+points(seq(min(pointsprior),max(pointsprior), length.out=length(pointsprior)), dnorm(seq(min(pointsprior), max(pointsprior), length.out=length(pointsprior)), mean=4, sd=0.8), type="l", col='red')
+plot(seq(min(pointsx),max(pointsx), length.out=length(pointsx)), dnorm(seq(min(pointsx), max(pointsx), length.out=length(pointsx)), mean=6, sd=1.5), type="l", col='green',xlab="points", ylab="Probability", main="Graph", ylim=c(0,1) )
+plot(seq(min(pointsx),max(pointsx), length.out=length(pointsx)), dnorm(seq(min(pointsx), max(pointsx), length.out=length(pointsx)), mean=6, sd=1.5), type="l", col='green',xlab="points", ylab="Probability", main="Graph", ylim=c(0,0.5) )
+points(seq(min(pointsprior),max(pointsprior), length.out=length(pointsprior)), dnorm(seq(min(pointsprior), max(pointsprior), length.out=length(pointsprior)), mean=4, sd=0.8), type="l", col='red')
+pointspost=rnorm(10000, mean=5.7009, sd=0.309)
+points(seq(min(pointspost),max(pointspost), length.out=length(pointspost)), dnorm(seq(min(pointspost), max(pointspost), length.out=length(pointspost)), mean=4, sd=0.8), type="l", col='blue')
+points(seq(min(pointspost),max(pointspost), length.out=length(pointspost)), dnorm(seq(min(pointspost), max(pointspost), length.out=length(pointspost)), mean=5.7009, sd=0.309), type="l", col='blue')
+plot(seq(min(pointsx),max(pointsx), length.out=length(pointsx)), dnorm(seq(min(pointsx), max(pointsx), length.out=length(pointsx)), mean=6, sd=1.5), type="l", col='green',xlab="points", ylab="Probability", main="Graph", ylim=c(0,1) )
+points(seq(min(pointsprior),max(pointsprior), length.out=length(pointsprior)), dnorm(seq(min(pointsprior), max(pointsprior), length.out=length(pointsprior)), mean=4, sd=0.8), type="l", col='red')
+points(seq(min(pointspost),max(pointspost), length.out=length(pointspost)), dnorm(seq(min(pointspost), max(pointspost), length.out=length(pointspost)), mean=5.7009, sd=0.309), type="l", col='blue')
+plot(seq(min(pointsx),max(pointsx), length.out=length(pointsx)), dnorm(seq(min(pointsx), max(pointsx), length.out=length(pointsx)), mean=6, sd=1.5), type="l", col='green',xlab="points", ylab="Probability", main="Graph", ylim=c(0,1.5) )
+points(seq(min(pointsprior),max(pointsprior), length.out=length(pointsprior)), dnorm(seq(min(pointsprior), max(pointsprior), length.out=length(pointsprior)), mean=4, sd=0.8), type="l", col='red')
+points(seq(min(pointspost),max(pointspost), length.out=length(pointspost)), dnorm(seq(min(pointspost), max(pointspost), length.out=length(pointspost)), mean=5.7009, sd=0.309), type="l", col='blue')
+plot(seq(min(pointsx),max(pointsx), length.out=length(pointsx)), dnorm(seq(min(pointsx), max(pointsx), length.out=length(pointsx)), mean=6, sd=1.5), type="l", col='green',xlab="points", ylab="PDF", main="Graph", ylim=c(0,1) )
+plot(seq(min(pointsx),max(pointsx), length.out=length(pointsx)), dnorm(seq(min(pointsx), max(pointsx), length.out=length(pointsx)), mean=6, sd=1.5), type="l", col='green',xlab="points", ylab="PDF", main="Graph", ylim=c(0,1.4) )
+points(seq(min(pointspost),max(pointspost), length.out=length(pointspost)), dnorm(seq(min(pointspost), max(pointspost), length.out=length(pointspost)), mean=5.7009, sd=0.309), type="l", col='blue')
+points(seq(min(pointsprior),max(pointsprior), length.out=length(pointsprior)), dnorm(seq(min(pointsprior), max(pointsprior), length.out=length(pointsprior)), mean=4, sd=0.8), type="l", col='red')
+summary(fit.all)
+plot(seq(min(pointsx),max(pointsx), length.out=length(pointsx)), dnorm(seq(min(pointsx), max(pointsx), length.out=length(pointsx)), mean=6, sd=1.5), type="l", col='green',xlab="points", ylab="PDF", main="Graph", ylim=c(0,1.4), lty=2 )
+plot(seq(min(pointsx),max(pointsx), length.out=length(pointsx)), dnorm(seq(min(pointsx), max(pointsx), length.out=length(pointsx)), mean=6, sd=1.5), type="l", col='green',xlab="points", ylab="PDF", main="Graph", ylim=c(0,1.4),  )
+?plot
+plot(seq(min(pointsx),max(pointsx), length.out=length(pointsx)), dnorm(seq(min(pointsx), max(pointsx), length.out=length(pointsx)), mean=6, sd=1.5), type="l", col='green',xlab="points", ylab="PDF", main="Graph", ylim=c(0,1.4), cex=2 )
+plot(seq(min(pointsx),max(pointsx), length.out=length(pointsx)), dnorm(seq(min(pointsx), max(pointsx), length.out=length(pointsx)), mean=6, sd=1.5), type="l", col='green',xlab="points", ylab="PDF", main="Graph", ylim=c(0,1.4) )
+plot(seq(min(pointsx),max(pointsx), length.out=length(pointsx)), dnorm(seq(min(pointsx), max(pointsx), length.out=length(pointsx)), mean=6, sd=1.5), type="l", col='green',xlab="points", ylab="PDF", main="Graph", ylim=c(0,1.4) , lwd=2)
+plot(seq(min(pointsx),max(pointsx), length.out=length(pointsx)), dnorm(seq(min(pointsx), max(pointsx), length.out=length(pointsx)), mean=6, sd=1.5), type="l", col='darkgreen',xlab="points", ylab="PDF", main="Graph", ylim=c(0,1.4) , lwd=2)
+points(seq(min(pointsprior),max(pointsprior), length.out=length(pointsprior)), dnorm(seq(min(pointsprior), max(pointsprior), length.out=length(pointsprior)), mean=4, sd=0.8), type="l", col='darkred', lwd=2)
+points(seq(min(pointspost),max(pointspost), length.out=length(pointspost)), dnorm(seq(min(pointspost), max(pointspost), length.out=length(pointspost)), mean=5.7009, sd=0.309), type="l", col='darkblue', lwd=2)
+?legend
+legend("topright",c("Prior","Likehood", "Posterir"),col=c("darkred","darkgreen", "darkblue"),bty='n',lwd=4,cex=0.7)
+legend("topright",c("Prior","Likehood", "Posterior"),col=c("darkred","darkgreen", "darkblue"),lwd=4,cex=0.7)
+legend("topright",c("Prior","Likehood", "Posterior"),col=c("darkred","darkgreen", "darkblue"),lwd=4,cex=0.5)
+plot(seq(min(pointsx),max(pointsx), length.out=length(pointsx)), dnorm(seq(min(pointsx), max(pointsx), length.out=length(pointsx)), mean=6, sd=1.5), type="l", col='darkgreen',xlab="points", ylab="PDF", main="Graph", ylim=c(0,1.4) , lwd=2)
+points(seq(min(pointspost),max(pointspost), length.out=length(pointspost)), dnorm(seq(min(pointspost), max(pointspost), length.out=length(pointspost)), mean=5.7009, sd=0.309), type="l", col='darkblue', lwd=2)
+points(seq(min(pointsprior),max(pointsprior), length.out=length(pointsprior)), dnorm(seq(min(pointsprior), max(pointsprior), length.out=length(pointsprior)), mean=4, sd=0.8), type="l", col='darkred', lwd=2)
+legend("topright",c("Prior","Likehood", "Posterior"),col=c("darkred","darkgreen", "darkblue"),lwd=4,cex=1)
+plot(seq(min(pointsx),max(pointsx), length.out=length(pointsx)), dnorm(seq(min(pointsx), max(pointsx), length.out=length(pointsx)), mean=6, sd=1.5), type="l", col='darkgreen',xlab="points", ylab="PDF", main="Graph", ylim=c(0,1.4) , lwd=2)
+points(seq(min(pointsprior),max(pointsprior), length.out=length(pointsprior)), dnorm(seq(min(pointsprior), max(pointsprior), length.out=length(pointsprior)), mean=4, sd=0.8), type="l", col='darkred', lwd=2)
+points(seq(min(pointspost),max(pointspost), length.out=length(pointspost)), dnorm(seq(min(pointspost), max(pointspost), length.out=length(pointspost)), mean=5.7009, sd=0.309), type="l", col='darkblue', lwd=2)
+legend("topright",c("Prior","Evidence", "Posterior"),col=c("darkred","darkgreen", "darkblue"),lwd=4,cex=1)
+library(gdata)
+my.data =read.xls("/media/pragati/New Volume/data_files/eBayAuctions.xls", sheet=1, header=TRUE)
+library(reshape)
+pivotCat=cast(my.data, .~Category, mean)
+print(pivotCat)
+pivotCurr=cast(my.data, .~currency, mean)
+print(pivotCurr)
+pivotDur=cast(my.data, .~Duration, mean)
+print(pivotDur)
+pivotendDay=cast(my.data, .~endDay, mean)
+print(pivotendDay)
+data.clubbed=my.data
+data.clubbed$Category= ifelse(my.data$Category %in% c('Automotive', 'Pottery/Glass'), 'Automotive_Pottery', ifelse(my.data$Category %in% c('Books', 'Clothing/Accessories'), 'Books_Clothing', ifelse(my.data$Category %in% c('Computer' , 'Business/Industrial'), 'Computer_Business', ifelse(my.data$Category %in% c('Antique/Art/Craft' , 'Collectibles'),'Antique_Collectibles',ifelse(my.data$Category %in% c('Electronics', 'Photography'), 'Electronics_Photography', levels(my.data$Category)[my.data$Category])))))
+data.clubbed$currency=ifelse(my.data$currency %in% c('US', 'EUR'), 'US_EUR', levels(my.data$currency)[my.data$currency])
+data.clubbed$Duration=ifelse(my.data$Duration %in% c('1','10'), '1_10', ifelse(my.data$Duration %in% c('3','7'),'3_7', '5'))
+data.clubbed$endDay=ifelse(my.data$endDay %in% c('Wed', 'Sun'), 'Wed_Sun', ifelse(my.data$endDay %in% c('Fri', 'Sat'),'Fri_Sat', levels(my.data$endDay)[my.data$endDay]))
+levelsCat <- sort(unique(data.clubbed$Category))
+idCat=levelsCat[-1]
+dummyCat <- matrix(NA, nrow = nrow(data.clubbed), ncol = length(idCat))
+colnames(dummyCat)=paste("Category_",idCat, sep="")
+for (j in 1:length(idCat)) {
+dummyCat[,j] <- as.integer(data.clubbed$Category == idCat[j])
+}
+levelsCurr <- sort(unique(data.clubbed$currency))
+idCurr=levelsCurr[-1]
+dummyCurr <- matrix(NA, nrow = nrow(data.clubbed), ncol = length(idCurr))
+colnames(dummyCurr)=paste("Currency_",idCurr, sep="")
+for (j in 1:length(idCurr)) {
+dummyCurr[,j] <- as.integer(data.clubbed$currency == idCurr[j])
+}
+levelsendDay <- sort(unique(data.clubbed$endDay))
+idendDay=levelsendDay[-1]
+dummyendDay <- matrix(NA, nrow = nrow(data.clubbed), ncol = length(idendDay))
+colnames(dummyendDay)=paste("endDay_",idendDay,sep="")
+for (j in 1:length(idendDay)) {
+dummyendDay[,j] <- as.integer(data.clubbed$endDay == idendDay[j])
+}
+levelsdur <- sort(unique(data.clubbed$Duration))
+iddur=levelsdur[-1]
+dummydur <- matrix(NA, nrow = nrow(data.clubbed), ncol = length(iddur))
+colnames(dummydur)=paste("Duration_",iddur, sep="")
+for (j in 1:length(iddur)) {
+dummydur[,j] <- as.integer(data.clubbed$Duration == iddur[j])
+}
+my.data.dummy=cbind(my.data, dummyCat, dummyCurr, dummyendDay, dummydur)
+my.data.dummy=my.data.dummy[, !(colnames(my.data.dummy) %in% c("Category", "currency", "Duration", "endDay"))]
+set.seed(1)
+trainindices=sample(nrow(my.data.dummy), size=nrow(my.data.dummy)*0.6)
+train=my.data.dummy[trainindices,]
+validation=my.data.dummy[-trainindices,]
+fit.all=glm(Competitive.~., family=binomial(link="logit"), data=train)
+print(summary(fit.all))
+fit.single=glm(Competitive.~Currency_US_EUR, family=binomial(link="logit"), data=train)
+print(summary(fit.single))
+fit.reduced=glm(Competitive.~Currency_US_EUR+sellerRating+ClosePrice+OpenPrice+Category_Books_Clothing+`Category_Coins/Stamps`+`Category_Health/Beauty`+endDay_Mon+Category_EverythingElse, family=binomial(link="logit"), data=train)
+print(summary(fit.reduced))
+anova(fit.all, fit.reduced, test="CHISQ")
+anova(fit.all, fit.reduced, test="Chisq")
+install.packages("fpp")
+library(fpp)
+help.search("forecasting")
+data(package="fmi")
+data(package="fma")
+data(hsales)
+plot(hsales)
+data(electricity)
+data(elec)
+plot(elec)
+data(ustreas)
+plot(ustreas)
+plot(dj)
+plot(diff(dj,1))
+fir= stl(elecequip, s.window=5)
+plot(fir)
+fit(stl(hsales, s.window=5))
+fit=(stl(hsales, s.window=5))
+plot(fit)
+fit=(stl(hsales, s.window=10))
+plot(fit)
+fit=(stl(hsales, s.window=5))
+plot(fit)
+names(fit)
+summary(fit)
+pointsx=rnorm(100000, mean=4, sd=sqrt(0.82))
+plot(sort(pointsx, dnorm(sort(pointsx), mean=4, sd=sqrt(0.82))))
+plot(sort(pointsx), dnorm(sort(pointsx), mean=4, sd=sqrt(0.82)))
+plot(sort(pointsx), dnorm(sort(pointsx), mean=4, sd=sqrt(0.82)), type=l, col="darkred", xlim=c(0,12), ylim=c(0,1.4), Main="Scatterplot")
+plot(sort(pointsx), dnorm(sort(pointsx), mean=4, sd=sqrt(0.82)), type=l, col="darkred", xlim=c(0,12), ylim=c(0,1.4), main="Scatterplot")
+plot(sort(pointsx), dnorm(sort(pointsx), mean=4, sd=sqrt(0.82)), type=l, col="darkred", xlim=c(0,12), ylim=c(0,1.4), xlab="Points", ylab="PDF")
+plot(sort(pointsx), dnorm(sort(pointsx), mean=4, sd=sqrt(0.82)), type='l', col="darkred", xlim=c(0,12), ylim=c(0,1.4), xlab="Points", ylab="PDF")
+plot(sort(pointsx), dnorm(sort(pointsx), mean=4, sd=sqrt(0.82)), type='l', col="darkred", xlim=c(0,12), ylim=c(0,1.4), xlab="Points", ylab="PDF", lwd=2)
+pointsprior=rnorm(100000, mean=6,sd=sqrt(1.52) )
+points(sort(pointsprior), dnorm(sort(pointsprior), mean=6, sd=sqrt(1.52)), type='l', col="darkgreen", main="Plot", lwd=2)
+plot(sort(pointsx), dnorm(sort(pointsx), mean=4, sd=sqrt(0.82)), type='l', col="darkred", xlim=c(0,12), ylim=c(0,1.4), xlab="Points", ylab="PDF", main="Plot", lwd=2)
+points(sort(pointsprior), dnorm(sort(pointsprior), mean=6, sd=sqrt(1.52)), type='l', col="darkgreen", lwd=2)
+pointspost=rnorm(100000, mean=5.7009,sd=sqrt(0.09568))
+points(sort(pointspost), dnorm(sort(pointspost), mean=5.7009, sd=sqrt(0.09568)), type='l', col="darkblue", lwd=2)
+legend("topright",c("Prior","Likehood", "Posterior"),col=c("darkred","darkgreen", "darkblue"),lwd=4,cex=1)
+pointsx=rnorm(100000, mean=4, sd=0.8)
+plot(sort(pointsx), dnorm(sort(pointsx), mean=4, sd=0.8, type='l', col="darkred", xlim=c(0,12), ylim=c(0,1.4), xlab="Points", ylab="PDF", main="Plot", lwd=2)
+)
+plot(sort(pointsx), dnorm(sort(pointsx), mean=4, sd=0.8, type='l', col="darkred", xlim=c(0,12), ylim=c(0,1.4), xlab="Points", ylab="PDF", main="Plot", lwd=2))
+plot(sort(pointsx), dnorm(sort(pointsx), mean=4, sd=0.8), type='l', col="darkred", xlim=c(0,12), ylim=c(0,1.4), xlab="Points", ylab="PDF", main="Plot", lwd=2)
+pointsprior=rnorm(100000, mean=6,sd=1.5 )
+points(sort(pointsprior), dnorm(sort(pointsprior), mean=6, sd=1.5), type='l', col="darkgreen", lwd=2)
+pointspost=rnorm(100000, mean=5.7009,sd=sqrt(0.09568))
+points(sort(pointspost), dnorm(sort(pointspost), mean=5.7009, sd=sqrt(0.09568)), type='l', col="darkblue", lwd=2)
+legend("topright",c("Prior","Likehood", "Posterior"),col=c("darkred","darkgreen", "darkblue"),lwd=4,cex=1)
+q()
+install.packages("RNetCDF", dependencies+TRUE)
+install.packages("RNetCDF", dependencies=TRUE)
+library(RNetCDF)
+setwd("D:/data_files/ALDA")
+getwd()
+setwd("/home/pragati/ALDA")
+getwd
+name="air.2m.gauss.1979.nc"
+id=open.nc(name)
+print.nc(id)
+id[,2,2]
+type(id)
+class(id)
+data=read.nc(id)
+data[,,2]
+class(data)
+data$air[,,2]
+data$air[1,1,]
+seq(1979,1989, length.out=10)
+(int)seq(1979,1989, length.out=10)
+rep(0,365)
+data.years=rep(0,365)
+for(i in c(1979,1980,1981,1982, 1983, 1984, 1985, 1986, 1987, 1988, 1989)){
+name=paste("air.2m.gauss.",i,".nc")
+id=open.nc(name)
+data=read.nc(id)
+data.years[i]=data
+}
+paste("air.2m.gauss.",i,".nc")
+source('~/.active-rstudio-document')
+summary(data.years)
+range(0,10)
+seq(0,10, length.out-10)
+seq(0,10, length.out=10)
+seq(0,10)
+}
+data.years=rep(0,365)
+for(i in seq(0,10))){
+name=paste("air.2m.gauss.",i+1979,".nc", sep="")
+id=open.nc(name)
+data=read.nc(id)
+data.years[i]=data$air[1,1,]
+}
+source('~/.active-rstudio-document')
+data.years(1)
+data.years[1]
+data.years[2]
+data.years
+data.years=rep(0,365)
+data.years
+data.years=rep(0,365)
+for(i in seq(1,10)){
+name=paste("air.2m.gauss.",i+1979,".nc", sep="")
+id=open.nc(name)
+data=read.nc(id)
+data.years[i]=data$air[1,1,]
+}
+data.years[1]
+data$air[1,1,]
+which(data$air[1,1,]==249.58)
+mean(data$air[1,1,])
+data.years[10]
+data.years=as.vector(rep(0,365))
+for(i in seq(1,10)){
+name=paste("air.2m.gauss.",i+1979,".nc", sep="")
+id=open.nc(name)
+data=read.nc(id)
+data.years[i]=data$air[1,1,]
+}
+as.vector(rep(0,365))
+class(as.vector(rep(0,365)))
+name
+seq(1,10)
+i
+source('~/ALDA/script_load.r')
+data.years
+source('~/ALDA/script_load.r')
+data.years=as.vector(rep(0,365))
+#rm(data.years)
+for(i in seq(1,10)){
+name=paste("air.2m.gauss.",i+1979,".nc", sep="")
+id=open.nc(name)
+data=read.nc(id)
+#data.years[i]=data$air[1,1,]
+data.years <- c(data.years, data$air[1,1,])
+}
+data.years
+data.years[366:]
+data.years[365:]
+data.years[365,]
+data.years[365]
+source('~/ALDA/script_load.r')
+data.years
+class(data.years)
+data.years <- data.years[366:length(data.years)]
+data.years
+length(data.years)
+plot(data.years)
+ts(data.years)
+source('~/ALDA/script_load.r')
+plot(decompose(tsdata,method="additive"))
+plot(stl(tsdata, s.window="periodic"))
+plot(stl(tsdata, s.window="periodic", t.window=15))
+source('~/ALDA/script_load.r')
+plot(decompose(tsdata,method="additive"))
+plot(decompose(tsdata,method="additive")))
+plot(decompose(tsdata,type="additive"))
+plot(decompose(tsdata,type="multiplicative"))
+source('~/ALDA/script_load.r')
+source('~/ALDA/script_load.r')
+splitdecompose <- decompose(tsdata,type="additive")
+names(splitdecompose)
+splitdecompose$random
+plot(splitdecompose$random)
+scale(splitdecompose$random)
+plot(scale(splitdecompose$random))
+nndist(splitdecompose,k=4)
+install.packages(spatstat, dependencies = TRUE)
+install.packages("spatstat", dependencies = TRUE)
+fourthnearestdist <- nndist(splitdecompose$random,k=4)
+fourthnearestdist <- nndist(splitdecompose$random,k=4)
+library(spatstat)
+library(RNetCDF)
+fourthnearestdist <- nndist(splitdecompose$random,k=4)
+fourthnearestdist <- nndist(splitdecompose$random,k=4,method="C")
+fourthnearestdist <- nndist(splitdecompose$random,k=4,by=NULL,method="C")
+fourthnearestdist <- nndist((splitdecompose$random,k=4,by=NULL,method="C"))
+help(nndist)
+fourthnearestdist <- nndist(splitdecompose$random,k=4,by=marks(splitdecompose$random),method="C")
+traceback()
+nndist(splitdecompose$random,k=4,by=marks(splitdecompose$random),method="C")
+data(cells)
+nndist(cells)
+cells
+plot(cells)
+class(cells)
+class(splitdecompose$random)
+as.ppp(splitdecompose$random)
+ppp(splitdecompose$random, length(splitdecompose$random))
+dim(splitdecompose$random)
+class(splitdecompose$random)
+as.matrix(splitdecompose$random)
+nndist(as.matrix(splitdecompose$random), k=4)
+nndist(as.matrix(splitdecompose$random), k=4, by=NULL, method="C")
+ppp(as.matrix(splitdecompose$random))
+cbind(seq(1:length(splitdecompose$random),as.matrix(splitdecompose$random))
+)
+q()
