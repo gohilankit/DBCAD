@@ -14,9 +14,9 @@ from igraph import *
 neighbourlong=[0,1,1,1,0,-1,-1,-1]
 neighbourlat =[-1,-1,0,1,1,1,0,-1]
 globalcorepoints=set()
-globalnoisepoints=set()
+globalnoisepoints=set(range(480))
 globalborderpoints=set()
-g = Graph()
+g = Graph(directed=True)
 g.add_vertices(480)
 f = Dataset('ALDA_dataset_and_initial_code/air.2m.gauss.1979.nc', 'r+', format="NETCDF4")
 
@@ -58,6 +58,8 @@ def isCorePoint(minPts, epsDist, currlong, currlat, minlong, minlat, rangelong, 
 
   if countwithineps >= minPts:
     globalcorepoints.add((currlat - minlat)*rangelong + (currlong - minlong))
+    if (currlat - minlat)*rangelong + (currlong - minlong) in globalnoisepoints:
+      globalnoisepoints.remove((currlat - minlat)*rangelong + (currlong - minlong))
 
     for iter in range(8):
       #Add edge to points which are within epsDist. use smallDTWDict
@@ -65,6 +67,8 @@ def isCorePoint(minPts, epsDist, currlong, currlat, minlong, minlat, rangelong, 
         #Consider neighbors for spatially bordered point but don't add them to the graph
         if currlat+neighbourlat[iter] in range(minlat, minlat+rangelat) and currlong+neighbourlong[iter] in range(minlong,minlong+rangelong):
           g.add_edge((currlat - minlat)*rangelong + (currlong - minlong), (currlat+neighbourlat[iter] - minlat)*rangelong + (currlong+neighbourlong[iter] - minlong))
+          if (currlat+neighbourlat[iter] - minlat)*rangelong + (currlong+neighbourlong[iter] - minlong) in globalnoisepoints:
+            globalnoisepoints.remove((currlat+neighbourlat[iter] - minlat)*rangelong + (currlong+neighbourlong[iter] - minlong))
 
 
 def DBSCAN(minPts, epsDist, timeindex, timewindow):
@@ -80,9 +84,12 @@ def main():
   #g= setupGraph()
   #using global variable for now
 
-  DBSCAN(5, 100, 4, 9)
+  DBSCAN(5, 20, 4, 9)
   print globalcorepoints
+  print ("No. of core points", len(globalcorepoints))
   print g
+  print ("No. of noise points", len(globalcorepoints))
+  print globalnoisepoints
 
 
 if __name__ == '__main__':
