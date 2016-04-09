@@ -62,10 +62,9 @@ def isCorePoint(minPts, epsDist, currlong, currlat, minlong, minlat, rangelong, 
     for iter in range(8):
       #Add edge to points which are within epsDist. use smallDTWDict
       if smallDTWDict[iter] < epsDist:
-        if (currlat - minlat)*rangelong + (currlong - minlong) < 0:
-          print ("currlat:" , currlat)
-          print ("currlong:" , currlong)
-        g.add_edge((currlat - minlat)*rangelong + (currlong - minlong), (currlat+neighbourlat[iter] - minlat)*rangelong + (currlong+neighbourlong[iter] - minlong))
+        #Consider neighbors for spatially bordered point but don't add them to the graph
+        if (minlat <= currlat+neighbourlat[iter] < minlat+rangelat) and (minlong <= currlong+neighbourlong[iter] < minlong+rangelong):
+          g.add_edge((currlat - minlat)*rangelong + (currlong - minlong), (currlat+neighbourlat[iter] - minlat)*rangelong + (currlong+neighbourlong[iter] - minlong))
 
 
 def DBSCAN(minPts, epsDist, timeindex, timewindow):
@@ -77,10 +76,10 @@ def DBSCAN(minPts, epsDist, timeindex, timewindow):
 
 
 def main():
-  
+
   #g= setupGraph()
   #using global variable for now
-  
+
   DBSCAN(5, 100, 4, 9)
   print globalcorepoints
   print g
