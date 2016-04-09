@@ -63,7 +63,7 @@ def isCorePoint(minPts, epsDist, currlong, currlat, minlong, minlat, rangelong, 
       #Add edge to points which are within epsDist. use smallDTWDict
       if smallDTWDict[iter] < epsDist:
         #Consider neighbors for spatially bordered point but don't add them to the graph
-        if (minlat <= currlat+neighbourlat[iter] < minlat+rangelat) and (minlong <= currlong+neighbourlong[iter] < minlong+rangelong):
+        if currlat+neighbourlat[iter] in range(minlat, minlat+rangelat) and currlong+neighbourlong[iter] in range(minlong,minlong+rangelong):
           g.add_edge((currlat - minlat)*rangelong + (currlong - minlong), (currlat+neighbourlat[iter] - minlat)*rangelong + (currlong+neighbourlong[iter] - minlong))
 
 
