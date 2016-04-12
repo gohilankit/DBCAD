@@ -84,18 +84,24 @@ def main():
   #g= setupGraph()
   #using global variable for now
 
-  DBSCAN(5, 44, 4, 9)
-  #print globalcorepoints
-  print ("No. of core points", len(globalcorepoints))
-  #print g
-  print ("No. of noise points", len(globalnoisepoints))
-  #print globalnoisepoints
-  #print "Edge List"
-  #print g.es
+  #timeindices= range(4, 360)
+  timeindices=[4]
+  for timeindex in timeindices:
+    DBSCAN(5, 10.27, timeindex, 5)
+    #print globalcorepoints
+    print ("No. of core points", len(globalcorepoints))
+    #print g
+    print ("No. of noise points", len(globalnoisepoints))
+    #print globalnoisepoints
+    #print "Edge List"
+    #print g.es
 
-  clusteredg = g.clusters(mode=WEAK)
-  print "clusteredg:"
-  print clusteredg
+    clusteredg = g.clusters(mode=WEAK)
+    print "clusteredg:"
+    #print clusteredg
+    file = open("./"+str(timeindex)+".clusters", 'w')
+    print >>file, clusteredg
+
 
 
 if __name__ == '__main__':
