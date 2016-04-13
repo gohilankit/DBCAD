@@ -84,8 +84,8 @@ def main():
   #g= setupGraph()
   #using global variable for now
 
-  #timeindices= range(4, 360)
-  timeindices=[4]
+  timeindices= range(4, 360)
+  #timeindices=[4]
   for timeindex in timeindices:
     DBSCAN(5, 10.27, timeindex, 5)
     #print globalcorepoints
@@ -99,7 +99,7 @@ def main():
     clusteredg = g.clusters(mode=WEAK)
     print "clusteredg:"
     #print clusteredg
-    file = open("./"+str(timeindex)+".clusters", 'w')
+    file = open("./clusters/"+str(timeindex)+".clusters", 'w')
     print >>file, clusteredg
 
 
