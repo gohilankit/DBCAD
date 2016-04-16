@@ -4,6 +4,7 @@ import numpy as np
 from scipy.spatial.distance import euclidean
 from scipy.sparse import csr_matrix
 from igraph import *
+from argparse import ArgumentParser, ArgumentDefaultsHelpFormatter
 
 
 #latitutdes index range: 0 to 93
@@ -17,17 +18,9 @@ globalcorepoints=set()
 globalnoisepoints=set(range(480))
 globalborderpoints=set()
 g = Graph(directed=True)
-g.add_vertices(480)
-f = Dataset('ALDA_dataset_and_initial_code/air.2m.gauss.1979.nc', 'r+', format="NETCDF4")
+filename="ALDA_dataset_and_initial_code/air.2m.gauss."
+f = Dataset(filename+str(1979)+".nc", "r+", format="NETCDF4")
 
-
-
-def setupGraph():
-  g = Graph()
-  g.add_vertices(480)
-
-
-  return g
 
 def isCorePoint(minPts, epsDist, currlong, currlat, minlong, minlat, rangelong, rangelat, timeindex, timewindow):
 
@@ -71,38 +64,52 @@ def isCorePoint(minPts, epsDist, currlong, currlat, minlong, minlat, rangelong, 
             globalnoisepoints.remove((currlat+neighbourlat[iter] - minlat)*rangelong + (currlong+neighbourlong[iter] - minlong))
 
 
-def DBSCAN(minPts, epsDist, timeindex, timewindow):
+def DBSCAN(minPts, epsDist, timeindex, timewindow, minlong, minlat, rangelong, rangelat):
   #in our case the points of USA are well within the index range of f. currently not writing a border handling case
 
-  for iterlong in range(126,158):
-    for iterlat in range(20,35):
-      isCorePoint(minPts, epsDist, iterlong, iterlat, 126, 20, 32, 15, timeindex, timewindow)
+  for iterlong in range(minlong,minlong+rangelong):
+    for iterlat in range(minlat,minlat+rangelat):
+      isCorePoint(minPts, epsDist, iterlong, iterlat, minlong, minlat, rangelong, rangelat, timeindex, timewindow)
 
 
 def main():
 
   #g= setupGraph()
   #using global variable for now
+  parser = ArgumentParser("DBSCAN", formatter_class=ArgumentDefaultsHelpFormatter, conflict_handler='resolve')
+  parser.add_argument('--minPts', default=3, type=int, help='minPts for DBSCAN algorithm')
+  parser.add_argument('--epsDist', default=15, type=float, help='epsDist for DBSCAN. Enter float')
+  parser.add_argument('--timeindex', type=int, help='Timeindex')
+  parser.add_argument('--timewindow', default=9, type=int, help='')
+  parser.add_argument('--country', default=1, type=int, help='1 for USA, 2 for World')
 
-  timeindices= range(4, 360)
-  #timeindices=[4]
-  for timeindex in timeindices:
-    DBSCAN(5, 10.27, timeindex, 5)
-    #print globalcorepoints
-    print ("No. of core points", len(globalcorepoints))
-    #print g
-    print ("No. of noise points", len(globalnoisepoints))
-    #print globalnoisepoints
-    #print "Edge List"
-    #print g.es
-
-    clusteredg = g.clusters(mode=WEAK)
-    print "clusteredg:"
-    #print clusteredg
-    file = open("./clusters/"+str(timeindex)+".clusters", 'w')
-    print >>file, clusteredg
-
-
+  args = parser.parse_args()
+  if args.country == 1:
+    minlong=126
+    minlat=20
+    rangelong=32
+    rangelat=15
+    g.add_vertices(480)
+  elif args.country==2:
+    minlong=1
+    minlat=1
+    rangelong=190
+    rangelat=92 
+    g.add_vertices(92*190)
+    
+    
+  #timeindices= range(4, 5)
+  #timeindices=[4]  
+  DBSCAN(args.minPts, args.epsDist, args.timeindex, args.timewindow,minlong, minlat, rangelong, rangelat)
+  clusteredg = g.clusters(mode=WEAK)
+  if args.country==1:
+    file = open("./clusters/usa."+str(args.timeindex)+".clusters", 'w')
+  else:
+    file = open("./clusters/world."+str(args.timeindex)+".clusters", 'w')
+  for cluster in clusteredg:
+    file.write(",".join(str(idx) for idx in cluster))
+    file.write("\n")
+  file.close()
 
 if __name__ == '__main__':
   main()

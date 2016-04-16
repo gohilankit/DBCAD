@@ -12,13 +12,13 @@ globalnoisepoints=set(range(480))
 globalborderpoints=set()
 globaldist=[]
 Modedict={}
-f = Dataset("D:/Git/DBCAD/ALDA_dataset_and_initial_code/air.2m.gauss.2011.nc", "r+", format="NETCDF4")
+f = Dataset("ALDA_dataset_and_initial_code/air.2m.gauss.1979.nc", "r+", format="NETCDF4")
 def testFunc():
   global globaldist
   timewindow=9
   iter=0
-  temp=[94]
-  for timeIndex in range (4,360,1):
+  temp=[4]
+  for timeIndex in temp:
     for iterlong in range(126,158):
       for iterlat in range(20,35):
         currtimeslice = f.variables['air'][timeIndex - timewindow/2  : timeIndex + timewindow/2 + 1, 0, iterlat, iterlong]
@@ -31,7 +31,7 @@ def testFunc():
            currdist.append(distance)
 
         currdist.sort()
-        globaldist+=currdist[0:4]
+        globaldist+=currdist[0:2]
 
 
 def main():
@@ -43,7 +43,7 @@ def main():
   
 
   plt.plot(globaldist)
-  plt.ylabel("4th neighbour distance")
+  plt.ylabel("2nd neighbour distance")
   plt.show()
   #fig=plt.figure()
   #ax=fig.add_subplot(111)
