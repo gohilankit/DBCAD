@@ -23,8 +23,8 @@ eps=5
 minPts=3
 res <- dbscan(as.matrix(dat),eps=eps,minPts = minPts,borderPoints = FALSE)
 for(i in 1:length(res$cluster)){
-   res$cluster[i]=ifelse(res$cluster[i]!=0,ifelse(res$cluster[i]!=127,2,1), 0)
- }
+  res$cluster[i]=ifelse(res$cluster[i]!=0,2,0)
+}
 plot(dat, col=res$cluster+1, pch = 20, main=paste("Plot for Epsilon=", eps, ", minPts=", minPts, sep=""),ylab="Air Temperatures (Normalized)", xlab="Number of days, starting from Jan 1, 1979")
 
   #Paper approach
