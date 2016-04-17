@@ -17,8 +17,8 @@ def testFunc():
   timewindow=9
   iter=0
   for timeIndex in range (4,5,1):
-    for iterlong in range(126,158):
-      for iterlat in range(20,35):
+    for iterlong in range(1,190):
+      for iterlat in range(1,92):
         currtimeslice = f.variables['air'][timeIndex - timewindow/2  : timeIndex + timewindow/2 + 1, 0, iterlat, iterlong]
         for iter in range(8):
            neighbourtimeslice = f.variables['air'][timeIndex - timewindow/2  : timeIndex + timewindow/2 + 1, 0, iterlat +neighbourlat[iter], iterlong+neighbourlong[iter]]

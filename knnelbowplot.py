@@ -17,10 +17,10 @@ def testFunc():
   global globaldist
   timewindow=9
   iter=0
-  temp=[4]
+  temp=range(4,50)
   for timeIndex in temp:
-    for iterlong in range(126,158):
-      for iterlat in range(20,35):
+    for iterlong in range(1,190):
+      for iterlat in range(1,92):
         currtimeslice = f.variables['air'][timeIndex - timewindow/2  : timeIndex + timewindow/2 + 1, 0, iterlat, iterlong]
         currdist=[]
         for iter in range(8):
