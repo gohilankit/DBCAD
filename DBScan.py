@@ -81,7 +81,7 @@ def main():
   parser.add_argument('--epsDist', default=15, type=float, help='epsDist for DBSCAN. Enter float')
   parser.add_argument('--timeindex', type=int, help='Timeindex')
   parser.add_argument('--timewindow', default=9, type=int, help='')
-  parser.add_argument('--country', default=1, type=int, help='1 for USA, 2 for World')
+  parser.add_argument('--country', default=2, type=int, help='1 for USA, 2 for World')
 
   args = parser.parse_args()
   if args.country == 1:
